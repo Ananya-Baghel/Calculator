@@ -1,60 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link to external style sheet for styling -->
-    <link rel="stylesheet" href="style.css">
-    <title>Calculator</title>
-</head>
-<body>
-    <!-- Main container for the calculator -->
-    <div class="container">
-       <!-- Calculator container with input field and buttons --> 
-    <div class="calculator">
-        <!-- Input field to display and enter numbers -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FX-991 Scientific Calculator</title>
 
-        <input type="text" placeholder="0" id="inputBox">
-        <!-- Button rows for different groups of operations -->
-        <div>
-            <!-- Buttons for clearing, deleting, percentage, and division -->
-            <button class="operator">AC</button>
-            <button class="operator">DEL</button>
-            <button class="operator">%</button>
-            <button class="operator">/</button>
-        </div>
-        <div>
-            <!-- Buttons for numbers 7, 8, 9, and multiplication -->
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="operator">*</button>
-        </div>
-        <div>
-            <!-- Buttons for numbers 4, 5, 6, and subtraction -->
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="operator">-</button>
-        </div>
-        <div>
-            <!-- Buttons for numbers 1, 2, 3, and addition -->
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="operator">+</button>
-        </div>
-        <div>
-            <!-- Buttons for double zero, single zero, decimal point, and equal sign -->
-            <button>00</button>
-            <button>0</button>
-            <button>.</button>
-            <button class="equalBTn">=</button>
-        </div>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="box-wrapper" id="boxWrapper">
+      <div class="closed-box" id="closedBox">
+        <div class="box-icon">🔢</div>
+        <div class="box-text">Calculator</div>
+        <div class="box-subtext">Click to Open</div>
+      </div>
     </div>
-</div>
-<!-- Include external JavaScript file for calculator functionality -->
-    <script src="script.js"></script>
-    
+
+    <div class="calculator-container">
+      <div class="calculator">
+
+        <div class="calc-header">
+          <div>
+            <div class="calc-brand">CALCULATOR</div>
+            <div class="calc-model">fx-INF PLUS</div>
+          </div>
+          <button class="close-btn" id="closeBtn">×</button>
+        </div>
+
+        <div class="display-section">
+          <div class="history-display" id="historyDisplay"></div>
+          <div class="previous-operand" id="previousOperand"></div>
+          <div class="current-operand" id="currentOperand">0</div>
+          <div class="mode-indicator" id="modeIndicator">MODE: COMP</div>
+        </div>
+
+        <div class="buttons-grid">
+
+          <!-- Row 1 -->
+          <button class="btn-function" onclick="calculator.toggleShift()">SHIFT</button>
+          <button class="btn-function" onclick="calculator.toggleMode()">MODE</button>
+          <button class="btn-clear" onclick="calculator.clear()">AC</button>
+          <button class="btn-function" onclick="calculator.delete()">DEL</button>
+          <button class="btn-operator" onclick="calculator.chooseOperation('÷')">÷</button>
+
+          <!-- Row 2 -->
+          <button class="btn-function" onclick="calculator.scientific('sin')">sin</button>
+          <button class="btn-function" onclick="calculator.scientific('cos')">cos</button>
+          <button class="btn-function" onclick="calculator.scientific('tan')">tan</button>
+          <button class="btn-function" onclick="calculator.appendSymbol('(')">(</button>
+          <button class="btn-function" onclick="calculator.appendSymbol(')')">)</button>
+
+          <!-- Row 3 -->
+          <button class="btn-function" onclick="calculator.scientific('square')">x²</button>
+          <button class="btn-function" onclick="calculator.scientific('sqrt')">√</button>
+          <button class="btn-number" onclick="calculator.appendNumber('7')">7</button>
+          <button class="btn-number" onclick="calculator.appendNumber('8')">8</button>
+          <button class="btn-number" onclick="calculator.appendNumber('9')">9</button>
+
+          <!-- Row 4 -->
+          <button class="btn-function" onclick="calculator.chooseOperation('^')">xʸ</button>
+          <button class="btn-function" onclick="calculator.scientific('log')">log</button>
+          <button class="btn-number" onclick="calculator.appendNumber('4')">4</button>
+          <button class="btn-number" onclick="calculator.appendNumber('5')">5</button>
+          <button class="btn-number" onclick="calculator.appendNumber('6')">6</button>
+
+          <!-- Row 5 -->
+          <button class="btn-function" onclick="calculator.scientific('ln')">ln</button>
+          <button class="btn-operator" onclick="calculator.chooseOperation('×')">×</button>
+          <button class="btn-number" onclick="calculator.appendNumber('1')">1</button>
+          <button class="btn-number" onclick="calculator.appendNumber('2')">2</button>
+          <button class="btn-number" onclick="calculator.appendNumber('3')">3</button>
+
+          <!-- Row 6 -->
+          <button class="btn-operator" onclick="calculator.chooseOperation('-')">−</button>
+          <button class="btn-operator" onclick="calculator.chooseOperation('+')">+</button>
+          <button class="btn-number btn-zero" onclick="calculator.appendNumber('0')">0</button>
+          <button class="btn-number" onclick="calculator.appendNumber('.')">.</button>
+          <button class="btn-equals" onclick="calculator.compute()">=</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
