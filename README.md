@@ -10,7 +10,7 @@ This project replicates the look and feel of a real Casio scientific calculator 
 
 You can view the calculator live here:
 
-🔗 **Live Demo:** https://Ananya-Baghel.github.io/fx-991-calculator/
+🔗 **Live Demo:** https://Ananya-Baghel.github.io/Calculator/
 
 
 
@@ -103,7 +103,7 @@ calculator/
 
 1.  Clone the repository:
     
-`   git clone https://github.com/Ananya-Baghel/fx-991-calculator.git   `
+`   git clone https://github.com/Ananya-Baghel/Calculator.git   `
 
 2.  Open the project folder:
     
@@ -134,7 +134,7 @@ Simply open index.html in your browser.
 1.  Save → Your site will be live at:
     
 
-   `https://Ananya-Baghel.github.io/fx-991-calculator/   `
+   `https://Ananya-Baghel.github.io/Calculator/   `
 
 📌 Future Improvements
 ----------------------
